@@ -4,9 +4,14 @@ using namespace std;
 //an abstract class: an easy interface for users to use, hiding complex things 
 class AbstractEmployee {
 //a contracts with 1 rule
+//whichever class want to sign the contract need to provide implementation for the method 
+//eg: AskForPromotion method 
+//this must be obligatory by making this a pure virtual function / abstract function
+    virtual void AskForPromotion()=0;
 };
 
-class Employee {
+//sign contract by ":AbstractEmployee"
+class Employee:AbstractEmployee {
     //all attributes of class is private by default
     //must make public
     //now we move to encapsulation
@@ -58,6 +63,14 @@ public:
     int getAge() {
         return Age;
     }
+
+    //implementation for abstract function
+    void AskForPromotion() {
+        if(Age>30)
+            cout<<Name<<" got promoted!"<<endl;
+        else
+            cout<<Name<<" , sorry NO promotion for you!"<<endl;
+    }
 };
 
 
@@ -69,7 +82,10 @@ int main()
     Employee employee2 = Employee("Don", "Korcat", 21);
     employee2.IntroduceYourself();
 
-    employee1.setAge(25);
+    employee1.setAge(35);
     cout << employee1.getName() << " is " << employee1.getAge() << " years old." << endl;
 
+    //test abstract class & virtual function
+    employee1.AskForPromotion();
+    employee2.AskForPromotion();
 }
