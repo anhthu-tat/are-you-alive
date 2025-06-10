@@ -37,7 +37,7 @@ int main()
     cout << yt1;
     //now we can cout a YouTubeChannel type the same way we cout a number
 
-    YouTubeChannel yt2 = YouTubeChannel("NTA", 500);
+    YouTubeChannel yt2 = YouTubeChannel("TA", 500);
     cout << yt1 << yt2;
     //can not print the next ytchannel
     //1.instead of return void, operator must return ostream object
