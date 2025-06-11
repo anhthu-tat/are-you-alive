@@ -71,6 +71,12 @@ public:
         else
             cout<<Name<<" , sorry NO promotion for you!"<<endl;
     }
+
+    //polymorphism 
+    //first, we create a method 
+    void Work() {
+        cout<<Name<<" is checking email, task, performing tasks..."<<endl;
+    }
 };
 
 //this "Developer" class is now the subclass of the "Employee" class
@@ -94,6 +100,11 @@ public:
         //Name when the properties is protected => derived class can access to
         cout<<getName()<<" fixed bug using "<<FavProgrammingLanguage<<endl;
     }
+
+    //polymorphism
+    void Work() {
+        cout<<Name<<" is writing "<<FavProgrammingLanguage<<" lesson."<<endl;
+    }
 };
 
 class Teacher:public Employee {
@@ -110,6 +121,14 @@ public:
         //method
     void prepareLesson() {
         cout<<Name<<" is preparing "<<Subject<<" lesson."<<endl;
+    }
+
+    //polymorphism
+    //make this function virtual after creating a pointer of base class referred to an object of derived class
+    //virtual function invoked: check if there is implementation of method inside the derived classes
+    //if yes, execute the implementation instead of this method
+    virtual void Work() {
+        cout<<Name<<" is teaching "<<Subject<<" subject."<<endl;
     }
 };
 
@@ -138,4 +157,35 @@ int main()
     Teacher t = Teacher("MNhu", "LTV", 36, "Math");
     t.prepareLesson();
     t.AskForPromotion();
+
+    //polymorphism
+    employee1.Work();
+    d.Work();
+    t.Work();
+
+    //create a pointer of type Employee
+    Developer d = Developer("NTA", "Catube", 45, "C++");
+    d.FixBug();
+    //d can not access to "AskForPromotion"
+    //inheritance is private => objects can not access to properties that inherited from "Employee" class
+    //Public inheritance to get access to "AskForPromotion"
+    d.AskForPromotion();
+
+    Teacher t = Teacher("MNhu", "LTV", 36, "Math");
+    t.prepareLesson();
+    t.AskForPromotion();
+
+    //polymorphism
+    employee1.Work();
+    d.Work();
+    t.Work();
+
+    //create a pointer of type Employee
+    //Rule: A pointer of base class can hold reference to derived class objects
+    //pointer e1 holds a reference to object d
+    Employee* e1= &d;
+    Employee* e2= &t;
+    e1->Work();
+    e2->Work();
+    //at first, it does not work. now add virtual into void Work => it worked
 }
