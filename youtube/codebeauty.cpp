@@ -73,6 +73,11 @@ public:
     }
 };
 
+//this "Developer" class is now the subclass of the "Employee" class
+//every single properties and methods of "Employee" is in "Developer"
+class Developer: Employee {
+
+};
 
 int main()
 {
