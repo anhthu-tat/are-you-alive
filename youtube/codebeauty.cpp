@@ -15,7 +15,7 @@ class Employee:AbstractEmployee {
     //all attributes of class is private by default
     //must make public
     //now we move to encapsulation
-private: 
+protected: 
     string Name;
     string Company;
     int Age;
@@ -75,8 +75,42 @@ public:
 
 //this "Developer" class is now the subclass of the "Employee" class
 //every single properties and methods of "Employee" is in "Developer"
-class Developer: Employee {
+//inheritance is private => objects can not access to properties that inherited from "Employee" class
+//Make inheritance public to get access to "AskForPromotion"
+class Developer:public Employee {
+public: 
+    string FavProgrammingLanguage;
 
+    //constructor
+    Developer(string name, string company, int age, string favprogramminglanguage) 
+        :Employee(name, company, age)
+    {
+        FavProgrammingLanguage = favprogramminglanguage;
+    }
+
+    //method
+    void FixBug() {
+        //getName() when the properties is private
+        //Name when the properties is protected => derived class can access to
+        cout<<getName()<<" fixed bug using "<<FavProgrammingLanguage<<endl;
+    }
+};
+
+class Teacher:public Employee {
+public:
+    string Subject;
+
+    //constructor
+    Teacher(string name, string company, int age, string subject)
+        :Employee(name, company, age) 
+    {
+        Subject = subject;
+    }
+
+        //method
+    void prepareLesson() {
+        cout<<Name<<" is preparing "<<Subject<<" lesson."<<endl;
+    }
 };
 
 int main()
@@ -93,4 +127,15 @@ int main()
     //test abstract class & virtual function
     employee1.AskForPromotion();
     employee2.AskForPromotion();
+
+    Developer d = Developer("NTA", "Catube", 45, "C++");
+    d.FixBug();
+    //d can not access to "AskForPromotion"
+    //inheritance is private => objects can not access to properties that inherited from "Employee" class
+    //Public inheritance to get access to "AskForPromotion"
+    d.AskForPromotion();
+
+    Teacher t = Teacher("MNhu", "LTV", 36, "Math");
+    t.prepareLesson();
+    t.AskForPromotion();
 }
