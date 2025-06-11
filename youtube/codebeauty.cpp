@@ -74,7 +74,10 @@ public:
 
     //polymorphism 
     //first, we create a method 
-    void Work() {
+    //make this function virtual after creating a pointer of base class referred to an object of derived class
+    //virtual function invoked: check if there is implementation of method inside the derived classes
+    //if yes, execute the implementation instead of this method
+    virtual void Work() {
         cout<<Name<<" is checking email, task, performing tasks..."<<endl;
     }
 };
@@ -124,10 +127,7 @@ public:
     }
 
     //polymorphism
-    //make this function virtual after creating a pointer of base class referred to an object of derived class
-    //virtual function invoked: check if there is implementation of method inside the derived classes
-    //if yes, execute the implementation instead of this method
-    virtual void Work() {
+    void Work() {
         cout<<Name<<" is teaching "<<Subject<<" subject."<<endl;
     }
 };
@@ -147,23 +147,6 @@ int main()
     employee1.AskForPromotion();
     employee2.AskForPromotion();
 
-    Developer d = Developer("NTA", "Catube", 45, "C++");
-    d.FixBug();
-    //d can not access to "AskForPromotion"
-    //inheritance is private => objects can not access to properties that inherited from "Employee" class
-    //Public inheritance to get access to "AskForPromotion"
-    d.AskForPromotion();
-
-    Teacher t = Teacher("MNhu", "LTV", 36, "Math");
-    t.prepareLesson();
-    t.AskForPromotion();
-
-    //polymorphism
-    employee1.Work();
-    d.Work();
-    t.Work();
-
-    //create a pointer of type Employee
     Developer d = Developer("NTA", "Catube", 45, "C++");
     d.FixBug();
     //d can not access to "AskForPromotion"
