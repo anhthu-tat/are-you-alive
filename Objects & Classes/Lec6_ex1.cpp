@@ -27,4 +27,20 @@ public:
     void setPrice(double price) { Price = price; }
     void setYear(int year) { Year = year; }
     void setPublisher(const string& publisher) { Publisher = publisher; }
+
+    //constructor 
+    Book(string author, string title, string format, double price, int year, string publisher){
+        Author = author;
+        Title = title;
+        Format = format;
+        Price = price;
+        Year = year;
+        Publisher = publisher;
+    }
+    
 };
+
+int main(){
+    Book book1 = Book("TAT", "Cattor", "Novel", 125.43, 2025, "NTL");
+    book1.getAuthor();
+}
