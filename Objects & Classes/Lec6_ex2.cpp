@@ -29,6 +29,7 @@ public:
     }
 
     // Constructors
+    //":"Member initializer list that directly initializes numeratorb -> 1 & denominator -> 1
     Rational() : numerator(1), denominator(1) {}
     Rational(int num, int denom) : numerator(num), denominator(denom) {
         if (denominator == 0) throw invalid_argument("Denominator cannot be zero");

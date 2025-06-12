@@ -17,7 +17,7 @@ public:
     string getTitle() const { return Title; }
     string getFormat() const { return Format; }
     double getPrice() const { return Price; }
-    int getnYear() const { return Year;}
+    int getYear() const { return Year;}
     string getPublisher() const { return Publisher; }
 
     //Setters
@@ -41,9 +41,11 @@ public:
     //method
     void Introduce(){
         cout<<"Book: "<<getTitle()<<endl;
-        cout<<"Book: "<<getTitle()<<endl;
-        cout<<"Book: "<<getTitle()<<endl;
-        cout<<"Book: "<<getTitle()<<endl;
+        cout<<"Author: "<<getAuthor()<<endl;
+        cout<<"Type: "<<getFormat()<<endl;
+        cout<<"Price: "<<getPrice()<<endl;
+        cout<<"Year of Publishcation: "<<getYear()<<endl;
+        cout<<"Publisher: "<<getPublisher()<<endl;
     }
 };
 
