@@ -170,5 +170,5 @@ int main()
     Employee* e2= &t;
     e1->Work();
     e2->Work();
-    //at first, it does not work. now add virtual into void Work => it worked
+    //at first, it does not work. now add virtual into void Work => it worked   
 }
