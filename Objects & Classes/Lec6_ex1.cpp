@@ -37,10 +37,18 @@ public:
         Year = year;
         Publisher = publisher;
     }
-    
+
+    //method
+    void Introduce(){
+        cout<<"Book: "<<getTitle()<<endl;
+        cout<<"Book: "<<getTitle()<<endl;
+        cout<<"Book: "<<getTitle()<<endl;
+        cout<<"Book: "<<getTitle()<<endl;
+    }
 };
 
 int main(){
     Book book1 = Book("TAT", "Cattor", "Novel", 125.43, 2025, "NTL");
     book1.getAuthor();
+    book1.Introduce();
 }
