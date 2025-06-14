@@ -74,3 +74,8 @@ public:
         }
     }
 };
+
+int main() {
+    Rational r1 = Rational(1, 3);
+    r1.display();
+}
