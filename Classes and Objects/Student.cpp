@@ -40,6 +40,8 @@ Student::Student( const Student & s) { // [9]
     }
 }
 
-int nCourses = 7; // [11]
-Student x(nCourses); // [11] // calls parameterized constructor
-Student y(x); // [11]      // calls copy constructor
+int main () {
+    int nCourses = 7; // [11]
+    Student x(nCourses); // [11] // calls parameterized constructor
+    Student y(x); // [11]      // calls copy constructo
+}
