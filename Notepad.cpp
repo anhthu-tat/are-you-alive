@@ -7,8 +7,7 @@ private:
     string digits; // Stores the digits of the number (e.g., "345672134579098765")
     bool is_negative;   // True if the number is negative, false otherwise
 
-    // Helper function to normalize the digit string by removing leading zeros.
-    // As per guideline 5, results might have leading zeros that need removal.
+    // Function to normalize the digit string by removing leading zeros. results might have leading zeros that need removal.
     void normalize() {
         // Find the first non-zero digit
         size_t first_digit_idx = 0;
