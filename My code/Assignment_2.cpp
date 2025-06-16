@@ -37,7 +37,12 @@ public:
 };
 
 class Parallelogram:public Quadrilateral {
+public: 
+    Parallelogram(int w, int h) : Quadrilateral(w, h) {}
 
+    double Area() const override {
+
+    }
 };
 
 class Trapezium:public Quadrilateral {
